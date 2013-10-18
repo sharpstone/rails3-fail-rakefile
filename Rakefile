@@ -5,3 +5,7 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails3Mri193::Application.load_tasks
+
+Rake::Task["assets:precompile:primary"].enhance do
+  raise "raising on assets:precompile on purpose"
+end
